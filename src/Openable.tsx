@@ -78,12 +78,12 @@ export default function Openable({
       case top:
         childrenPos = {
           left: -width / 2 + openableWidth / 2,
-          top: -openableHeight,
+          top: -height,
         };
         break;
       case left:
         childrenPos = {
-          left: -openableWidth,
+          left: -width,
           top: -height / 2 + openableHeight / 2,
         };
         break;
