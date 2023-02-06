@@ -7,6 +7,9 @@ export interface Coords {
 }
 
 export interface DraggableContextValue {
+  /**
+   * Represents if the draggable container should have a boundry. If not set, it could be dragged without limit
+   */
   bounds?: React.RefObject<HTMLElement> | Bounds | undefined;
 }
 

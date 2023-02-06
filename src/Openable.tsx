@@ -7,10 +7,21 @@ interface ChildrenPos {
   top?: number;
 }
 
+/**
+ * Represents a component that shows a children when a click is fired on it.
+ */
 export default function Openable({
   children,
+  parent,
 }: {
-  children: React.ReactElement[];
+  /**
+   * The node that is always shown
+   */
+  parent: React.ReactNode;
+  /**
+   * The children that is hidden but shown on parent's click
+   */
+  children: React.ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -119,7 +130,7 @@ export default function Openable({
         }}
         role="button"
       >
-        {children[0]}
+        {parent}
       </div>
       <a.div
         style={{
@@ -131,7 +142,7 @@ export default function Openable({
         }}
         ref={menuRef}
       >
-        {children[1]}
+        {children}
       </a.div>
     </div>
   );
