@@ -47,12 +47,12 @@ export default function Draggable({
 
   const bind = useDrag(
     ({ offset: [x, y], tap, event, first }) => {
+      if (stackableContext && stackableContext.lastZ != zIndex) {
+        setZIndex(stackableContext.lastZ + 1);
+        stackableContext.setLastZ((z) => z + 1);
+      }
       if (tap) {
         return;
-      }
-      if (first && stackableContext && stackableContext.lastZ != zIndex) {
-        stackableContext.setLastZ((z) => z + 1);
-        setZIndex(stackableContext.lastZ + 1);
       }
       api.start({ x, y, config });
       event.preventDefault();
