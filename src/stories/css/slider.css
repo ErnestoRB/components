@@ -1,0 +1,10 @@
+.w-256 {
+  width: 256px;
+}
+.h-256 {
+  height: 256px;
+}
+
+.border-black {
+  border: 1px solid black;
+}
